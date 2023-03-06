@@ -1,0 +1,10 @@
+.indicator-img {
+    width: 75px;
+    height: 75px;
+    cursor: pointerv;
+}
+
+.indicator-img .active{
+    background-color: black;
+    opacity: 0.05;
+}
