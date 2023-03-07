@@ -1,9 +1,10 @@
 import { ReactComponent as Logo } from '../img/logo.svg'
 import { useNavigate } from "react-router-dom";
-
+import { useAuthContext } from '../Auth/AuthContext';
 
 function Navbar(props) {
     const navigate = useNavigate();
+    const { user, isLoading, setUser } = useAuthContext();
 
     return (
 
@@ -24,17 +25,26 @@ function Navbar(props) {
                         <li>
                             <a href="/about" className="nav-link px-2 text-white">About</a>
                         </li>
-
                     </ul>
+                    {/* TODO check if user is logged in and display this accordingly :) */}
+                    {/* // <h4>Logged in as {user.username}</h4> */}
+                    {
+                        user ? (
+                                <div>
+                                    cart
+                                </div>
+                        ) : (
+                            <div className="text-end">
+                                <button type="button"
+                                    className="btn btn-outline-light me-2"
+                                    onClick={() => navigate("/login")}>Login</button>
 
-                    <div className="text-end">
-                        <button type="button"
-                            className="btn btn-outline-light me-2"
-                            onClick={() => navigate("/login")}>Login</button>
+                                <button type="button" className="btn btn-warning"
+                                    onClick={() => navigate("/register")}>Register</button>
+                            </div>
+                        )
+                    }
 
-                        <button type="button" className="btn btn-warning"
-                        onClick={() => navigate("/register")}>Register</button>
-                    </div>
                 </div>
             </div>
         </header>

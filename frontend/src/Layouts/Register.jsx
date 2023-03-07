@@ -3,6 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
+// FIXME firstly check if the user is already logged in !
+// FIXME logout
+/*
+const handleLogout = () => {
+    removeToken();
+    navigate("/signin", { replace: true });
+};
+*/
+
 const isValidEmail = email =>
     // eslint-disable-next-line no-useless-escape
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
@@ -12,6 +21,7 @@ const isValidEmail = email =>
 function Register() {
     const navigate = useNavigate();
     const [registrationError, setRegistrationError] = useState({});
+    // FIXME Sanitize input
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm(
         {
@@ -35,44 +45,45 @@ function Register() {
     };
 
     // let password = watch("password", "");
+    const registerUser = data => {
+        // console.log(data);
+        // FIXME Turn into function
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                username: data.username,
+                email: data.email,
+                password: data.password,
+                firstName: data.firstName,
+                lastName: data.lastName
+            })
+        }
 
+        fetch('http://127.0.0.1:1337/api/auth/local/register', requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    // console.error(data.error.message)
+                    setRegistrationError(data.error)
+                } else {
+                    console.log("Successfull registration!")
+                    // console.log(data)
+
+                    navigate("/login")
+
+                    // FIXME Redirect to login ?? /// what do now lol
+                }
+            });
+
+    }
 
     return (
         <>
             {/* <Navbar></Navbar> */}
             <div className="container my-4 mx-auto d-flex ">
                 <div className="register-container d-flex align-items-center m-auto text-center" style={{ maxWidth: "330px" }}>
-                    <form onSubmit={handleSubmit(data => {
-                        // console.log(data);
-                        const requestOptions = {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                username: data.username,
-                                email: data.email,
-                                password: data.password,
-                                firstName: data.firstName,
-                                lastName: data.lastName
-                            })
-                        }
-
-                        fetch('http://127.0.0.1:1337/api/auth/local/register', requestOptions)
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.error) {
-                                    // console.error(data.error.message)
-                                    setRegistrationError(data.error)
-                                } else {
-                                    console.log("Successfull registration!")
-                                    // console.log(data)
-
-                                    navigate("/login")
-
-                                    // FIXME Redirect to login ?? /// what do now lol
-                                }
-                            });
-
-                    })}>
+                    <form onSubmit={handleSubmit(data => registerUser)}>
                         <Logo width="80px" height="80px" className="mb-4" />
                         <h3 className="mb-3 fw-normal">Please sign in</h3>
 
@@ -90,13 +101,13 @@ function Register() {
                                 <input
                                     className={errors.lastName ? "form-control is-invalid" : "form-control"}
                                     placeholder='Last Name'
-                                    {...register("lastName", { 
-                                        required: true, 
-                                        maxLength: 20 
+                                    {...register("lastName", {
+                                        required: true,
+                                        maxLength: 20
                                     })}
-                                    
+
                                 />
-                                <label htmlFor="Vorname" className="px-4">Nachname</label>
+                                <label htmlFor="lastName" className="px-4">Last Name</label>
                             </div>
                         </div>
 
