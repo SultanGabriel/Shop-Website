@@ -46,8 +46,6 @@ function Register() {
 
     // let password = watch("password", "");
     const registerUser = data => {
-        // console.log(data);
-        // FIXME Turn into function
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -72,7 +70,7 @@ function Register() {
 
                     navigate("/login")
 
-                    // FIXME Redirect to login ?? /// what do now lol
+                    // FIXME Redirect to login ?? 
                 }
             });
 

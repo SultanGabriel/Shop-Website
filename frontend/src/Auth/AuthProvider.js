@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
                 headers: { Authorization: `${BEARER} ${token}` },
             });
 
-            // -- maybe clean data ?
+            // FIXME clean data ?
             const data = await response.json();
 
             setUserData(data);

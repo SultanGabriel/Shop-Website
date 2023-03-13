@@ -7,6 +7,9 @@ function Home() {
         <div>
             <Navbar></Navbar>
             <Hero></Hero>
+
+            {/* -- Featured Products */}
+
             <Footer sticky={true}></Footer>
         </div>
     )

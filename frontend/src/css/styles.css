@@ -1,8 +1,8 @@
-#Navbar{
+#Navbar {
     background-color: #263847;
 }
 
-#HeroImg{
+#HeroImg {
     background: rgba(0, 0, 0, .65) url('../img/hero-bg.png');
     background-blend-mode: darken;
     /* background-image: url('img/hero-bg.png'); */
@@ -11,6 +11,20 @@
     background-size: cover;
 }
 
-.bg-darken{
+.bg-darken {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+}
+
+
+/* ------------------------------ Shopping Cart ----------------------------- */
+
+#shoppingCart {
+    background-color: rgba(0, 0, 0, 0);
+    /* border-radius: 25px; */
+    /* border: 2px solid black; */
+    border: none;
+}
+
+#shoppingCart:hover {
+    background-color: salmon;
 }
