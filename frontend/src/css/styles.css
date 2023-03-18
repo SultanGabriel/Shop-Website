@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+:root {
+    --accent-color: #FAFA32;
+    --main-color: #263847;
+    /* --main-color: #FF0000;  */
+}
 #Navbar {
-    background-color: #263847;
+    background-color: var(--main-color);
 }
 
 #HeroImg {
@@ -9,6 +15,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 450px;
 }
 
 .bg-darken {
@@ -26,5 +33,125 @@
 }
 
 #shoppingCart:hover {
-    background-color: salmon;
+    /* background-color: salmon; */
+    background: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgba(0, 0, 0, .2) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.cartDropdown {
+    min-width: 450px !important;
+    /* min-height: 250px !important; */
+}
+
+/* ------------------------------ Product Card ------------------------------ */
+
+.product-card {
+    /* height: 30%; */
+    /* position: relative; */
+    position: relative;
+
+    height: 200px;
+    width: 100%;
+
+    /* border: 1px solid black; */
+    border-radius: 5%;
+    /* border-style: none; */
+    /* vertical-align: middle; */
+    /* aspect-ratio: 7/5; */
+}
+
+
+.product-card-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5%;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; */
+}
+
+/* FIXME Better Naming please thanks */
+.product-info-container {
+    border-radius: 5%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%,
+            rgba(0, 0, 0, 1) 100%);
+}
+
+.product-details {
+    position: absolute;
+    bottom: 12%;
+    left: 5%;
+    /* top: 0; */
+    /* transform: translate(0, 100%); */
+    z-index: 3;
+}
+
+.product-name {
+    color: white;
+}
+
+.price-card {}
+
+.product-price {
+    background-color: var(--main-color);
+
+    /* height: 100%; */
+    padding: 8px;
+    border-radius: 15%;
+    border: 5px solid white;
+    position: absolute;
+
+    z-index: 5;
+    bottom: 0;
+    left: 5%;
+    transform: translate(0, 50%);
+
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.product-cart{
+    background-color: var(--main-color);
+    /* height: 100%; */
+    padding: 4px;
+    border-radius: 15%;
+    border: 5px solid white;
+    position: absolute;
+
+    z-index: 5;
+    bottom: 0;
+    right: 5%;
+    transform: translate(0, 50%);
+
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.product-cart:hover{
+    background-color: #68859e;
+}
+
+/* ---------------------------- Featured Products --------------------------- */
+.featured-products-title{
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    /* font-size: 1rem; */
 }

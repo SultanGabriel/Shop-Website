@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AuthContext } from "./AuthContext";
-import { API, BEARER } from "./constant";
+import { API, BEARER } from "./constant"; // FIXME Change API to env
 import { useEffect } from "react";
 import { getToken } from "./helpers";
 

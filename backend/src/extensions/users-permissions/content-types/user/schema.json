@@ -70,6 +70,11 @@
     "lastName": {
       "type": "string",
       "required": false
+    },
+    "shopping_cart": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shopping-cart.shopping-cart"
     }
   }
 }

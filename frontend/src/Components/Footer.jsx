@@ -7,7 +7,7 @@ function Footer(props) {
     return (
         <footer className={props.sticky ? "footer fixed-bottom" : "footer"}>
             <div className="container">
-                <div className=" d-flex flex-wrap justify-content-between align-items-center py-3 my-2 border-top">
+                <div className="d-flex flex-wrap justify-content-between align-items-center py-3 my-2 border-top">
                     <div className="col-md-4 d-flex align-items-center">
                         <a href="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
                             <LogoSVG width="48px" height="48px"/>
@@ -40,33 +40,4 @@ function Footer(props) {
 
 export { Footer };
 // TODO Add Social Media Links
-/*
-
-    <li className="ms-3">
-        <a className="text-muted" href="#">
-            <svg className="bi" width="24" height="24">
-                <use xlink:href="#twitter"></use>
-            </svg>
-        </a>
-    </li>
-    <li className="ms-3">
-        <a className="text-muted" href="#">
-            <svg className="bi" width="24" height="24">
-                <use xlink:href="#instagram"></use>
-            </svg>
-        </a>
-    </li>
-    <li className="ms-3">
-        <a className="text-muted" href="#">
-            <svg className="bi" width="24" height="24">
-                <use xlink:href="#facebook"></use>
-            </svg>
-        </a>
-    </li>
-</ul>
-*/
-/*
-    <svg className="bi" width="30" height="24" >
-        <use xlink:href="#logo"></use>
-    </svg>
-*/
+// TODO SITEMAP!

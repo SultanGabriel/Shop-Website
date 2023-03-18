@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shopping_carts",
+  "info": {
+    "singularName": "shopping-cart",
+    "pluralName": "shopping-carts",
+    "displayName": "ShoppingCart"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "private": true
+    }
+  }
+}

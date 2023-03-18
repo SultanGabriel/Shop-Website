@@ -2,6 +2,7 @@ import { ReactComponent as Logo } from '../img/logo.svg'
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from '../Auth/AuthContext';
 import Cart from './Cart';
+import UserProfile from './UserProfile';
 
 function Navbar(props) {
     const navigate = useNavigate();
@@ -31,7 +32,13 @@ function Navbar(props) {
                     {/* // <h4>Logged in as {user.username}</h4> */}
                     {
                         user ? (
-                                <Cart/>
+                            <>
+                                <Cart />
+                                <a href="/user">
+
+                                    <UserProfile />
+                                </a>
+                            </>
                         ) : (
                             <div className="text-end">
                                 <button type="button"

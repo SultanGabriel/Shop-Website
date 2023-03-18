@@ -44,6 +44,14 @@
     },
     "salePrice": {
       "type": "float"
+    },
+    "listingType": {
+      "type": "enumeration",
+      "enum": [
+        "Featured",
+        "Standard"
+      ],
+      "default": "Standard"
     }
   }
 }

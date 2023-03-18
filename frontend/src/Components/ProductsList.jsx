@@ -3,7 +3,7 @@ import { ProductCard } from "./ProductCard";
 function ProductsList(props) {
 
     return (
-        <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
             {
                 props.items.map(e => {
                     return (
@@ -22,6 +22,7 @@ function ProductsList(props) {
     )
 }
 
+// IDEA 
 // IDEA ? more like question, add category here so it is easeably readeable ?
 // TODO Filtering ;)
 

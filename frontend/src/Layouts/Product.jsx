@@ -8,7 +8,7 @@ import { ImageCarousel } from '../Components/ImageCarousel';
 import '../css/product.css'
 
 
-function Product() {
+const Product = () => {
     const [productDetails, setProductDetails] = useState({ available: false });
     const params = useParams();
     let id = params.id;
@@ -43,44 +43,41 @@ function Product() {
         getProductDetails();
     }, []);
 
-    // console.log(productDetails)
-
-    // console.log(data.attributes.bild.data.map(e => "http://127.0.0.1:1337" + e.attributes.url))
-
     return (
         <div>
             <Navbar></Navbar>
-            <div className="container my-2 d-flex align-items-center">
-                <div className="row">
-                    <div className="col-5 ">
-                        {/* <ImageCarousel images={[
-                            'https://fastly.picsum.photos/id/1040/500/500.jpg?hmac=bmdEjFeT-uNd51SRuaCY9lKhha5_o8mKmJ5gFTkXBNc',
-                            'https://fastly.picsum.photos/id/1002/500/500.jpg?hmac=PoR97MywVbxXRCsUdyiLttHcb5ZGmhrQGUnfCUbkU4w',
-                            'https://fastly.picsum.photos/id/6/500/500.jpg?hmac=BV78_cgdwZQNfQorKlCsS4-47_DG0MJ3GZqiDBfeHbI']} /> */}
-                        {
-                            productDetails.available && (<ImageCarousel images={productDetails.data.attributes.bild.data.map(e => { return "http://127.0.0.1:1337" + e.attributes.url })} />)
-                        }
+            <div className="container mt-4 d-flex align-items-center">
+                <div>
+                    <div className="row">
+                        <div className="col-md-5 ">
+                            {
+                                productDetails.available && (
+                                    <ImageCarousel images={
+                                        productDetails.data.attributes.bild.data.map(e => {
+                                            return "http://127.0.0.1:1337" + e.attributes.url
+                                        })}
+                                    />
+                                )
+                            }
+                        </div>
 
+                        <div className="col-md-7 ">
+                            {
+                                productDetails.available && (
+                                    <div className="">
+                                        <h2>{productDetails.name}</h2>
+                                        <h4>{productDetails.price}</h4>
+                                        <h4> Sale?</h4>
+                                        <h4>Description</h4>
+                                        <p>{productDetails.description}</p>
+                                        <button className='btn btn-secondary m-2'>Add to Cart</button>
+                                        <button className='btn btn-primary m-2'>Buy</button>
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
 
-
-                    <div className="col text-align-right">
-                        {
-                            // (status === 200) ? (
-                            productDetails.available && (
-                                <div className="">
-                                    <h2>{productDetails.name}</h2>
-                                    <h4>{productDetails.price}</h4>
-                                    <h4> Sale?</h4>
-                                    <h4>Description</h4>
-                                    <p>{productDetails.description}</p>
-                                    <button className='btn btn-secondary m-2'>Add to Cart</button>
-                                    <button className='btn btn-primary m-2'>Buy</button>
-                                </div>
-                            )
-                            // ) : (<></>)
-                        }
-                    </div>
                 </div>
             </div>
 
@@ -90,3 +87,14 @@ function Product() {
 }
 
 export { Product }
+const stf = ({/*
+    <div className='row mt-4'>
+            TODO Add Product Details Thingy, Technical data or smth else... 
+        <h1>Product Details</h1>
+        <div className='border-top'>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores placeat eligendi laboriosam amet velit expedita illum, at, ipsum dolore suscipit recusandae perspiciatis nobis tenetur consequatur!
+            </p>
+        </div>
+    </div>
+*/})
