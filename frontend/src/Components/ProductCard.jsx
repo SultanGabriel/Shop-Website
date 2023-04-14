@@ -18,11 +18,10 @@ function ProductCard(props) {
                     <div className="product-details">
 
                         <h5 className="product-name">{props.name}</h5>
+
                     </div>
-                    {/* <span className="price-card"> */}
                     <span className="product-price">{props.price}€</span>
-                    {/* </span> */}
-                    <span className="product-cart"><CartIcon width="32px" height="32px"/></span>
+                    <span className="product-cart"><CartIcon width="32px" height="32px" /></span>
                 </div>
             </div>
         </div>

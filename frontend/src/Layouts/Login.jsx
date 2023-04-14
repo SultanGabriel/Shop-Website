@@ -35,9 +35,7 @@ function Login() {
                     console.error(data.error)
                     setError({
                         message: "Invalid credentials!"
-                        // status: data.error.status,
-                        // message: data.error.message,
-                        // name: data.error.name
+
                     })
                 } else {
                     console.log("Successfully Logged in!")
@@ -51,7 +49,6 @@ function Login() {
 
                     navigate("/user")
 
-                    // TODO save JWT Token to Local Storage OR Cookies ?? || and then redirect to homepage :)
                 }
             });
     }
@@ -96,7 +93,6 @@ function Login() {
                         </div>
                         <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
 
-                        // TODO ADD FORGOT PASSWORD :)
                         <p className="mt-5 mb-3 text-muted">© Sultan 2023</p>
 
                     </form>
@@ -108,16 +104,8 @@ function Login() {
 }
 
 export { Login };
+// TODO ADD FORGOT PASSWORD :)
 // TODO add a way to get back to the homepage 
 
 // IDEA Footer or no Footer?
 // {/* <Footer sticky={true} /> */}
-
-const idk2 = (
-
-    <div className="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-        </label>
-    </div>
-)

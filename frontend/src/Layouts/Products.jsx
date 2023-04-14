@@ -11,15 +11,17 @@ import { ProductsOrderBy } from '../Components/ProductsOrderBy';
 // CSS
 import '../css/products.css';
 
+const API_IP = "http://127.0.0.1:1337";
+
 async function fetchProducts() {
     // FIXME Better API Call & include categories
-    const response = await fetch('http://127.0.0.1:1337/api/products?populate=*');
+    const response = await fetch(`${API_IP}/api/products?populate=*`);
     if (!response.ok) throw new Error(response.status);
     return response.json();
 }
 
 async function fetchCategories() {
-    const response = await fetch('http://127.0.0.1:1337/api/categories');
+    const response = await fetch(`${API_IP}/api/categories`);
     if (!response.ok) throw new Error(response.status);
     return response.json();
 }
@@ -35,6 +37,9 @@ function Products() {
                 let rawData = result.data;
 
                 // IDEA isn't it kind of redudant to clean the object .. iterating two times over.. it improves readability but at the cost of speeeeeeeeed ?!?!
+
+                // IDEA add category to Product Object for ease of use
+
                 // console.log(rawData)
                 // Clean Data Object
                 let data = rawData.map(e => {
@@ -73,7 +78,7 @@ function Products() {
     }, [])
 
     const [search, setSearch] = useState('');
-    console.log(search)
+    // console.log(search)
 
     return (
         <div>
@@ -121,6 +126,6 @@ function Products() {
 export { Products };
 
 // TODO Pagination
-// TODO Get Categories from API
-// TODO Filter by category
+// -- Better category system !
+// TODO Filter by category 
 // TODO Filter by Price, Name, ... 

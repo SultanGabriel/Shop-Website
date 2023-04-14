@@ -4,6 +4,7 @@ import { useAuthContext } from '../Auth/AuthContext';
 import Cart from './Cart';
 import UserProfile from './UserProfile';
 
+
 function Navbar(props) {
     const navigate = useNavigate();
     const { user, isLoading, setUser } = useAuthContext();
@@ -19,7 +20,7 @@ function Navbar(props) {
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                         <li>
-                            <a href="/" className="nav-link px-2 text-secondary">Home</a>
+                            <a href="/" className="nav-link px-2 text-white">Home</a>
                         </li>
                         <li>
                             <a href="/products" className="nav-link px-2 text-white">Products</a>
@@ -27,6 +28,7 @@ function Navbar(props) {
                         <li>
                             <a href="/about" className="nav-link px-2 text-white">About</a>
                         </li>
+                        
                     </ul>
                     {/* TODO check if user is logged in and display this accordingly :) */}
                     {/* // <h4>Logged in as {user.username}</h4> */}

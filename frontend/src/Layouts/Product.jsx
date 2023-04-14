@@ -7,7 +7,7 @@ import { ImageCarousel } from '../Components/ImageCarousel';
 
 import '../css/product.css'
 
-
+// TODO 
 const Product = () => {
     const [productDetails, setProductDetails] = useState({ available: false });
     const params = useParams();
@@ -19,7 +19,7 @@ const Product = () => {
             async res => {
                 let data = await res.json();
                 // console.log("hello ", data)
-                // TODO destructure object for easier use in the return statement ..
+                // Destructuriing object for ease of use
                 setProductDetails({
                     available: true,
                     data: data.data,
@@ -67,7 +67,7 @@ const Product = () => {
                                     <div className="">
                                         <h2>{productDetails.name}</h2>
                                         <h4>{productDetails.price}</h4>
-                                        <h4> Sale?</h4>
+                                        {/* <h4> TODO Sale?</h4> */}
                                         <h4>Description</h4>
                                         <p>{productDetails.description}</p>
                                         <button className='btn btn-secondary m-2'>Add to Cart</button>
@@ -87,14 +87,3 @@ const Product = () => {
 }
 
 export { Product }
-const stf = ({/*
-    <div className='row mt-4'>
-            TODO Add Product Details Thingy, Technical data or smth else... 
-        <h1>Product Details</h1>
-        <div className='border-top'>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores placeat eligendi laboriosam amet velit expedita illum, at, ipsum dolore suscipit recusandae perspiciatis nobis tenetur consequatur!
-            </p>
-        </div>
-    </div>
-*/})

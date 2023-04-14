@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+
 :root {
     --accent-color: #FAFA32;
     --main-color: #263847;
     /* --main-color: #FF0000;  */
 }
+
 #Navbar {
     background-color: var(--main-color);
 }
@@ -88,7 +90,7 @@
     width: 100%;
     background: rgb(0, 0, 0);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%,
-            rgba(0, 0, 0, 1) 100%);
+            rgb(36, 36, 36) 100%);
 }
 
 .product-details {
@@ -102,7 +104,15 @@
 
 .product-name {
     color: white;
+    font-size: 1vw;
 }
+
+@media screen and (max-width: 63.9375em) {
+    .product-name {
+        font-size: 3.5vw;
+    }
+}
+
 
 .price-card {}
 
@@ -126,7 +136,7 @@
     font-size: 1rem;
 }
 
-.product-cart{
+.product-cart {
     background-color: var(--main-color);
     /* height: 100%; */
     padding: 4px;
@@ -145,12 +155,12 @@
     font-size: 1rem;
 }
 
-.product-cart:hover{
+.product-cart:hover {
     background-color: #68859e;
 }
 
 /* ---------------------------- Featured Products --------------------------- */
-.featured-products-title{
+.featured-products-title {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
     /* font-size: 1rem; */

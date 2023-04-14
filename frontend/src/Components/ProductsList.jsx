@@ -1,4 +1,5 @@
 import { ProductCard } from "./ProductCard";
+// import { ProductCard } from "./_BACKUP_ProductCard";
 
 function ProductsList(props) {
 
@@ -22,8 +23,6 @@ function ProductsList(props) {
     )
 }
 
-// IDEA 
-// IDEA ? more like question, add category here so it is easeably readeable ?
 // TODO Filtering ;)
 
 export { ProductsList }

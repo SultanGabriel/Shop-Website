@@ -5,7 +5,7 @@ function CategoriesList(props) {
 
         <div className="card">
             <div className="card-header">
-                Filter
+                Categories
             </div>
             <ul className="list-group list-group-flush">
                 {

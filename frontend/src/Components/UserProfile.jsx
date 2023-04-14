@@ -1,6 +1,6 @@
 import React from 'react'
 import {ReactComponent as UserProfileIcon} from '../img/profile.svg'
-
+// FIXME better name
 function UserProfile() {
   return (
     <div className="mx-2">
